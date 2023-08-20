@@ -10,7 +10,7 @@ interface EmployeeDao {
     fun getAllEmployees(): Flow<List<EmployeeModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEmployee(employee: EmployeeModel)
+    suspend fun insertEmployee(employee: EmployeeModel):Long
 
 //    @Delete
 //    suspend fun deleteEmployee(id:Int)

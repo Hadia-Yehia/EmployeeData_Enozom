@@ -6,17 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="371dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:elevation="20dp"
+        android:ems="10"
+        android:hint="          Search"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="49dp"
+        android:layout_height="66dp"
+        app:layout_constraintStart_toStartOf="@+id/search_bar"
+        app:layout_constraintTop_toTopOf="@+id/search_bar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/employees_rv"
+        android:layout_width="409dp"
+        android:layout_height="633dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
