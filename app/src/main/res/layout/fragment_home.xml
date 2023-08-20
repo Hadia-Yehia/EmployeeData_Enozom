@@ -34,6 +34,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="30dp"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/name_txt"
         app:layout_constraintStart_toStartOf="@+id/name_txt"
@@ -46,8 +47,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="@+id/imgV"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/imgV" />
@@ -71,17 +72,7 @@
         android:text="Skills"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/Skills_input" />
-
-    <AutoCompleteTextView
-        android:id="@+id/Skills_input"
-        android:layout_width="250dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="30dp"
-        android:text="Enter your skills"
-        app:layout_constraintEnd_toEndOf="@+id/email_txt"
-        app:layout_constraintStart_toStartOf="@+id/email_txt"
-        app:layout_constraintTop_toBottomOf="@+id/email_txt" />
+        app:layout_constraintTop_toTopOf="@+id/skills_input" />
 
     <Button
         android:id="@+id/add_btn"
@@ -91,5 +82,15 @@
         android:text="Add Employee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Skills_input" />
+        app:layout_constraintTop_toBottomOf="@+id/skills_input" />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/skills_input"
+        android:layout_width="250dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="30dp"
+        android:hint="Choose your skills"
+        app:layout_constraintEnd_toEndOf="@+id/email_txt"
+        app:layout_constraintStart_toStartOf="@+id/email_txt"
+        app:layout_constraintTop_toBottomOf="@+id/email_txt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
