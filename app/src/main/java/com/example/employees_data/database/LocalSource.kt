@@ -2,6 +2,7 @@ package com.example.employees_data.database
 
 import android.content.Context
 import com.example.employees_data.model.EmployeeModel
+import com.example.employees_data.model.EmployeeSkills
 import com.example.employees_data.model.SkillModel
 import kotlinx.coroutines.flow.Flow
 
@@ -14,8 +15,12 @@ class LocalSource(context:Context):LocalSourceInterface {
         val db:DataBase=DataBase.getInstance(context)
         db.getEmployeeDao()
     }
-    override suspend fun insertEmployee(employee: EmployeeModel) {
-        employeeDao.insertEmployee(employee)
+    private val employeeSkillsDao:EmployeeSkillDao by lazy {
+        val db:DataBase=DataBase.getInstance(context)
+        db.getEmployeeSkillsDao()
+    }
+    override suspend fun insertEmployee(employee: EmployeeModel):Long {
+       return employeeDao.insertEmployee(employee)
     }
 
     override fun getAllStoredEmployees(): Flow<List<EmployeeModel>> {
@@ -32,6 +37,14 @@ class LocalSource(context:Context):LocalSourceInterface {
 
     override fun getAllStoredSkills(): Flow<List<SkillModel>> {
         return skillsDao.getAllSkills()
+    }
+
+    override suspend fun insertEmployeeSkill(skill: EmployeeSkills) {
+        employeeSkillsDao.insertEmployeeSkill(skill)
+    }
+
+    override fun getAllStoredSkillsForEmployee(): Flow<List<EmployeeSkills>> {
+        return employeeSkillsDao.getAllEmployeeSkills()
     }
 
 //    override suspend fun deleteSkill(id: Int) {

@@ -19,8 +19,8 @@ class Repository(var localSourceInterface: LocalSourceInterface):RepositoryInter
             }
         }
     }
-    override suspend fun insertEmployee(employee: EmployeeModel) {
-        localSourceInterface.insertEmployee(employee)
+    override suspend fun insertEmployee(employee: EmployeeModel):Long {
+        return localSourceInterface.insertEmployee(employee)
     }
 
     override fun getAllStoredEmployees(): Flow<List<EmployeeModel>> {
@@ -37,6 +37,14 @@ class Repository(var localSourceInterface: LocalSourceInterface):RepositoryInter
 
     override fun getAllStoredSkills(): Flow<List<SkillModel>> {
         return  localSourceInterface.getAllStoredSkills()
+    }
+
+    override suspend fun insertEmployeeSkill(skill: EmployeeSkills) {
+        localSourceInterface.insertEmployeeSkill(skill)
+    }
+
+    override fun getAllStoredEmployeeSkills(): Flow<List<EmployeeSkills>> {
+        return getAllStoredEmployeeSkills()
     }
 
 //    override suspend fun deleteSkill(id: Int) {

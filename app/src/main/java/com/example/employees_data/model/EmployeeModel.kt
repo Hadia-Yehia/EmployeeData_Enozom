@@ -9,6 +9,6 @@ data class EmployeeModel(var name:String) {
     var id:Int = 0
     var photo :String? = null
     var Email :String? = null
-    var Skills:ArrayList<String>? = null
+   // var Skills:ArrayList<String>? = null
 
 }
